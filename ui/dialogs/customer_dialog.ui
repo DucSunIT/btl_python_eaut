@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>450</height>
+    <width>541</width>
+    <height>469</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -119,7 +119,7 @@ border-radius: 5px;
 padding: 3px;</string>
         </property>
         <property name="readOnly">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -267,6 +267,18 @@ padding: 3px;</string>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="lbl_dia_chi">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>44</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Arial</family>

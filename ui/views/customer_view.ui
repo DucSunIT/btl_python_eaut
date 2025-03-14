@@ -106,7 +106,7 @@ border-radius: 5px;
 padding: 3px;</string>
         </property>
         <property name="placeholderText">
-         <string>Tìm kiếm theo mã, tên, SĐT...</string>
+         <string>Tìm kiếm theo mã, tên...</string>
         </property>
         <property name="clearButtonEnabled">
          <bool>true</bool>

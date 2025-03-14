@@ -119,7 +119,7 @@ border-radius: 5px;
 padding: 3px;</string>
         </property>
         <property name="readOnly">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -166,12 +166,12 @@ padding: 3px;</string>
          </font>
         </property>
         <property name="text">
-         <string>Điểm đi: *</string>
+         <string>Địa điểm: *</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="txt_diem_di">
+       <widget class="QLineEdit" name="txt_dia_diem">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -192,40 +192,6 @@ padding: 3px;</string>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="lbl_diem_den">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Điểm đến: *</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="txt_diem_den">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #ccc;
-border-radius: 5px;
-padding: 3px;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
        <widget class="QLabel" name="lbl_ngay_bat_dau">
         <property name="font">
          <font>
@@ -238,7 +204,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="3" column="1">
        <widget class="QDateEdit" name="date_bat_dau">
         <property name="minimumSize">
          <size>
@@ -262,7 +228,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="lbl_ngay_ket_thuc">
         <property name="font">
          <font>
@@ -275,7 +241,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="4" column="1">
        <widget class="QDateEdit" name="date_ket_thuc">
         <property name="minimumSize">
          <size>
@@ -299,7 +265,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="0">
+      <item row="5" column="0">
        <widget class="QLabel" name="lbl_so_nguoi">
         <property name="font">
          <font>
@@ -312,7 +278,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
+      <item row="5" column="1">
        <widget class="QSpinBox" name="spin_so_nguoi">
         <property name="minimumSize">
          <size>
@@ -339,7 +305,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="lbl_gia_tour">
         <property name="font">
          <font>
@@ -352,7 +318,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
+      <item row="6" column="1">
        <widget class="QDoubleSpinBox" name="spin_gia_tour">
         <property name="minimumSize">
          <size>
@@ -388,7 +354,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="0">
+      <item row="7" column="0">
        <widget class="QLabel" name="lbl_trang_thai">
         <property name="font">
          <font>
@@ -401,7 +367,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
+      <item row="7" column="1">
        <widget class="QComboBox" name="cmb_trang_thai">
         <property name="minimumSize">
          <size>
@@ -420,9 +386,19 @@ padding: 3px;</string>
 border-radius: 5px;
 padding: 3px;</string>
         </property>
+        <item>
+         <property name="text">
+          <string>Còn</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hết</string>
+         </property>
+        </item>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="8" column="0">
        <widget class="QLabel" name="lbl_mo_ta">
         <property name="font">
          <font>
@@ -435,7 +411,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
+      <item row="8" column="1">
        <widget class="QPlainTextEdit" name="txt_mo_ta">
         <property name="minimumSize">
          <size>

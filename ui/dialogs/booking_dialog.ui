@@ -123,40 +123,6 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbl_tour">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Tour: *</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="cmb_tour">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #ccc;
-border-radius: 5px;
-padding: 3px;</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="lbl_khach_hang">
         <property name="font">
@@ -343,6 +309,37 @@ padding: 3px;</string>
        </widget>
       </item>
       <item row="7" column="0">
+       <widget class="QLabel" name="lbl_tien_tt">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Số tiền đã TT:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLabel" name="txt_tien_tt">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #126E34;</string>
+        </property>
+        <property name="text">
+         <string>0 VND</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
        <widget class="QLabel" name="lbl_trang_thai">
         <property name="font">
          <font>
@@ -355,7 +352,7 @@ padding: 3px;</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
+      <item row="8" column="1">
        <widget class="QComboBox" name="cmb_trang_thai">
         <property name="minimumSize">
          <size>
@@ -374,34 +371,32 @@ padding: 3px;</string>
 border-radius: 5px;
 padding: 3px;</string>
         </property>
+        <item>
+         <property name="text">
+          <string>Còn</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hết</string>
+         </property>
+        </item>
        </widget>
       </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="lbl_ghi_chu">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>Ghi chú:</string>
+         <string>Tour: *</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
-       <widget class="QPlainTextEdit" name="txt_ghi_chu">
-        <property name="maximumSize">
+      <item row="1" column="1">
+       <widget class="QComboBox" name="cmb_tour">
+        <property name="minimumSize">
          <size>
-          <width>16777215</width>
-          <height>60</height>
+          <width>0</width>
+          <height>30</height>
          </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">border: 1px solid #ccc;

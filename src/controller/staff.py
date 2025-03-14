@@ -1,13 +1,12 @@
 from PyQt6.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
 from PyQt6 import uic
-from connect import db_connect
-from edit_dialog import EditDialog
-from staff_dialog import StaffDialog
+from database import *
+from dialog import *
 
 class Staff(QDialog):
     def __init__(self, widget):
         super(Staff, self).__init__()
-        uic.loadUi('../ui/staff_view.ui', self)
+        uic.loadUi('../ui/views/staff_view.ui', self)
         self.widget = widget
 
         # Kết nối các nút với các phương thức tương ứng
@@ -21,20 +20,26 @@ class Staff(QDialog):
 
     def load_data(self):
         db = db_connect()
-        cursor = db.cursor()
-        cursor.execute("SELECT * FROM nhanvien")
-        data = cursor.fetchall()
-        
-        # Đặt tiêu đề cho các cột
-        headers = ["Mã NV", "Họ tên", "Địa chỉ", "Ngày sinh", "Giới tính", "SĐT", "Email", "Chức vụ"]
-        self.table_staff.setColumnCount(len(headers))
-        self.table_staff.setHorizontalHeaderLabels(headers)
-        
-        self.table_staff.setRowCount(len(data))
+        try: 
+            print("Kết nối CSDL thành công -- Staff!")
+            cursor = db.cursor()
+            cursor.execute("SELECT * FROM nhanvien")
+            data = cursor.fetchall()
+            
+            # Đặt tiêu đề cho các cột
+            headers = ["Mã NV", "Họ tên", "Địa chỉ", "Ngày sinh", "Giới tính", "SĐT", "Email", "Chức vụ"]
+            self.table_staff.setColumnCount(len(headers))
+            self.table_staff.setHorizontalHeaderLabels(headers)
+            
+            self.table_staff.setRowCount(len(data))
 
-        for row_idx, row_data in enumerate(data):
-            for col_idx, col_data in enumerate(row_data):
-                self.table_staff.setItem(row_idx, col_idx, QTableWidgetItem(str(col_data)))
+            for row_idx, row_data in enumerate(data):
+                for col_idx, col_data in enumerate(row_data):
+                    self.table_staff.setItem(row_idx, col_idx, QTableWidgetItem(str(col_data)))
+        except Exception as e:
+            QMessageBox.warning(self, "Lỗi", f"Lỗi khi tải dữ liệu: {e}")
+        finally:
+            db.close()
 
     def show_add_dialog(self):
         dialog = StaffDialog()
@@ -48,7 +53,7 @@ class Staff(QDialog):
             return
 
         ma_nv = self.table_staff.item(selected_row, 0).text()
-        dialog = EditDialog(ma_nv)
+        dialog = EditStaffDialog(ma_nv)
         dialog.exec()
         self.load_data()
 
@@ -63,10 +68,15 @@ class Staff(QDialog):
         ma_nv = self.table_staff.item(selected_row, 0).text()
         db = db_connect()
         cursor = db.cursor()
-        cursor.execute("DELETE FROM nhanvien WHERE MaNV=%s", (ma_nv,))
-        db.commit()
-        QMessageBox.information(self, "Thành công", "Xóa nhân viên thành công")
-        self.load_data()
+        try: 
+            cursor.execute("DELETE FROM nhanvien WHERE MaNV=%s", (ma_nv,))
+            db.commit()
+            QMessageBox.information(self, "Thành công", "Xóa nhân viên thành công")
+            self.load_data()
+        except Exception as e:
+            QMessageBox.warning(self, "Lỗi", f"Lỗi khi xóa nhân viên: {e}")
+        finally:
+            db.close()
 
     def search_staff(self):
         db = db_connect()

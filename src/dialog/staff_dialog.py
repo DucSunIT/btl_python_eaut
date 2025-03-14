@@ -1,11 +1,11 @@
 from PyQt6.QtWidgets import QDialog, QMessageBox
 from PyQt6 import uic
-from connect import db_connect
+from database import *
 
 class StaffDialog(QDialog):
     def __init__(self):
         super(StaffDialog, self).__init__()
-        uic.loadUi('../ui/staff_dialog.ui', self)
+        uic.loadUi('../ui/dialogs/staff_dialog.ui', self)
 
         self.btn_save.clicked.connect(self.save_staff)
         self.btn_cancel.clicked.connect(self.close)
@@ -27,13 +27,18 @@ class StaffDialog(QDialog):
             QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
             return
         # Thêm nhân viên vào cơ sở dữ liệu
-        cursor.execute("""
-            INSERT INTO nhanvien (MaNV, HoTen, DiaChi, NgaySinh, GioiTinh, SDT, Email, ChucVu)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-        """, (ma_nv, ho_ten, dia_chi, ngay_sinh, gioi_tinh, so_dien_thoai, email, chuc_vu))
-        db.commit()
-        QMessageBox.information(self, "Thành công", "Thêm nhân viên thành công")
-        self.close()
+        try: 
+            cursor.execute("""
+                INSERT INTO nhanvien (MaNV, HoTen, DiaChi, NgaySinh, GioiTinh, SDT, Email, ChucVu)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (ma_nv, ho_ten, dia_chi, ngay_sinh, gioi_tinh, so_dien_thoai, email, chuc_vu))
+            db.commit()
+            QMessageBox.information(self, "Thành công", "Thêm nhân viên thành công")
+            self.close()
+        except Exception as e:
+            QMessageBox.warning(self, "Lỗi", f"Lỗi khi thêm nhân viên: {e}")
+        finally:
+            db.close()
 
     def cancel(self):
         self.close()

@@ -3,11 +3,9 @@ from PyQt6.QtWidgets import QApplication
 import sys
 from login import Login_w
 from main_window import Main_w
-from staff import Staff
-from customer import Customer
-from tour import Tour
-from booking import Booking
-from statistics import Statistics
+from controller import *
+from database import *
+from dialog import *
 
 app = QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
