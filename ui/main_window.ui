@@ -98,7 +98,7 @@
              <string notr="true">color: #ffffff;</string>
             </property>
             <property name="text">
-             <string>TRAVEL DNPHL</string>
+             <string>TRAVEL ĐNPHL</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -332,6 +332,90 @@ QPushButton:pressed {
          <property name="icon">
           <iconset>
            <normaloff>../assets/bar-chart-2.svg</normaloff>../assets/bar-chart-2.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+	padding-left: 1px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Lập trình ứng dụng với Python</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+	padding-left: 1px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Nhóm 7 - DCCNTT13.10.6</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+	padding-left: 1px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Giảng viên: Nguyễn Đức Thiện (B)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>

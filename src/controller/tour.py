@@ -15,7 +15,7 @@ class Tour(QDialog):
         self.btn_delete.clicked.connect(self.delete_tour)
         self.btn_search.clicked.connect(self.search_tour)
         self.txt_search.textChanged.connect(self.on_search_text_changed)
-
+        self.btn_exit.clicked.connect(self.exit)
         self.load_data()
 
     def load_data(self):
@@ -110,3 +110,5 @@ class Tour(QDialog):
     def on_search_text_changed(self):
         if self.txt_search.text() == '':
             self.load_data()
+    def exit(self):
+        self.widget.setCurrentIndex(0)

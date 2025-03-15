@@ -15,7 +15,7 @@ class Customer(QDialog):
         self.btn_delete.clicked.connect(self.delete_customer)
         self.btn_search.clicked.connect(self.search_customer)
         self.txt_search.textChanged.connect(self.on_search_text_changed)
-
+        self.btn_exit.clicked.connect(self.exit)
         self.load_data()
 
     def load_data(self):
@@ -111,3 +111,5 @@ class Customer(QDialog):
     def on_search_text_changed(self):
         if self.txt_search.text() == '':
             self.load_data()
+    def exit(self):
+        self.widget.setCurrentIndex(0)

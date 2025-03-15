@@ -1,6 +1,8 @@
-from PyQt6.QtWidgets import QDialog, QMessageBox, QLineEdit, QDateEdit, QPlainTextEdit, QSpinBox, QComboBox, QPushButton
+from PyQt6.QtWidgets import QDialog, QMessageBox, QLineEdit, QDateEdit, QPlainTextEdit, QSpinBox, QComboBox, QPushButton, QDoubleSpinBox
 from PyQt6 import uic
+from PyQt6.QtCore import QDate
 from database import *
+import datetime
 
 class EditTourDialog(QDialog):
     def __init__(self, ma_tour):
@@ -14,7 +16,7 @@ class EditTourDialog(QDialog):
         self.date_bat_dau = self.findChild(QDateEdit, "date_bat_dau")
         self.date_ket_thuc = self.findChild(QDateEdit, "date_ket_thuc")
         self.spin_so_nguoi = self.findChild(QSpinBox, "spin_so_nguoi")
-        self.spin_gia_tour = self.findChild(QSpinBox, "spin_gia_tour")
+        self.spin_gia_tour = self.findChild(QDoubleSpinBox, "spin_gia_tour")
         self.cmb_trang_thai = self.findChild(QComboBox, "cmb_trang_thai")
         self.txt_mo_ta = self.findChild(QPlainTextEdit, "txt_mo_ta")
 
@@ -38,8 +40,6 @@ class EditTourDialog(QDialog):
                 self.txt_ma_tour.setText(data[0])
                 self.txt_ten_tour.setText(data[1])
                 self.txt_dia_diem.setText(data[2])
-                self.date_bat_dau.setDate(data[3])
-                self.date_ket_thuc.setDate(data[4])
                 self.spin_so_nguoi.setValue(data[5])
                 self.spin_gia_tour.setValue(data[6])
                 self.cmb_trang_thai.setCurrentText(data[7])

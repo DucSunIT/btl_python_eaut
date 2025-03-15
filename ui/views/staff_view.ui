@@ -117,8 +117,8 @@ padding: 3px;</string>
        <widget class="QPushButton" name="btn_search">
         <property name="minimumSize">
          <size>
-          <width>80</width>
-          <height>30</height>
+          <width>100</width>
+          <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -149,6 +149,33 @@ QPushButton:pressed {
         </property>
         <property name="text">
          <string>Tìm kiếm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_exit">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #126E34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #1B8A47;
+}
+QPushButton:pressed {
+    background-color: #1D9F4E;
+}</string>
+        </property>
+        <property name="text">
+         <string>Thoát</string>
         </property>
        </widget>
       </item>

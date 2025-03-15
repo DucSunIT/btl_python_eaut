@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1062</width>
+    <height>840</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -78,6 +78,60 @@ border-radius: 5px;</string>
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_refresh">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #126E34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #1B8A47;
+}
+QPushButton:pressed {
+    background-color: #1D9F4E;
+}</string>
+        </property>
+        <property name="text">
+         <string>Làm mới</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_exit">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #126E34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+QPushButton:hover {
+    background-color: #1B8A47;
+}
+QPushButton:pressed {
+    background-color: #1D9F4E;
+}</string>
+        </property>
+        <property name="text">
+         <string>Thoát</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -323,12 +377,12 @@ padding: 3px;</string>
         </property>
         <item>
          <property name="text">
-          <string>Doanh thu theo năm</string>
+          <string>Doanh thu theo tháng</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Doanh thu theo tháng</string>
+          <string>Doanh thu theo năm</string>
          </property>
         </item>
         <item>
@@ -344,40 +398,6 @@ padding: 3px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lbl_year">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Năm:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="cmb_year">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #ccc;
-border-radius: 5px;
-padding: 3px;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -390,83 +410,6 @@ padding: 3px;</string>
         </property>
        </spacer>
       </item>
-      <item>
-       <widget class="QLabel" name="lbl_date_range">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Khoảng thời gian:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDateEdit" name="date_start">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #ccc;
-border-radius: 5px;
-padding: 3px;</string>
-        </property>
-        <property name="calendarPopup">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lbl_to">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>đến</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDateEdit" name="date_end">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 1px solid #ccc;
-border-radius: 5px;
-padding: 3px;</string>
-        </property>
-        <property name="calendarPopup">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
@@ -476,13 +419,19 @@ padding: 3px;</string>
       <enum>Qt::Vertical</enum>
      </property>
      <widget class="QWidget" name="chart_container" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>200</height>
+        <height>320</height>
        </size>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <property name="leftMargin">
         <number>0</number>
        </property>

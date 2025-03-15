@@ -15,7 +15,7 @@ class Booking(QDialog):
         self.btn_delete.clicked.connect(self.delete_booking)
         self.btn_search.clicked.connect(self.search_booking)
         self.txt_search.textChanged.connect(self.on_search_text_changed)
-
+        self.btn_exit.clicked.connect(self.exit)
         self.load_data()
 
     def load_data(self):
@@ -72,12 +72,13 @@ class Booking(QDialog):
         db = db_connect()
         cursor = db.cursor()
         # Lấy dữ liệu từ trường nhập liệu
-        name = self.txt_search.text()
+        ma_tour = self.txt_search.text()
         ma_dat_tour = self.txt_search.text()
-        if name == '':
+        ma_kh = self.txt_search.text()
+        if ma_tour == '':
             self.load_data()
         # Tìm kiếm tour trong cơ sở dữ liệu
-        cursor.execute("SELECT * FROM dattour WHERE HoTen LIKE %s OR MaKH = %s", ('%' + name + '%',  ma_dat_tour ))
+        cursor.execute("SELECT * FROM dattour WHERE MaTour = %s OR MaDatTour = %s OR MaKH = %s", (ma_tour ,  ma_dat_tour, ma_kh))
         data = cursor.fetchall()
 
         if not data:
@@ -95,3 +96,5 @@ class Booking(QDialog):
     def on_search_text_changed(self):
         if self.txt_search.text() == '':
             self.load_data()
+    def exit(self):
+        self.widget.setCurrentIndex(0)

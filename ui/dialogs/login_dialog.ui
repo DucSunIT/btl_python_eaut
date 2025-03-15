@@ -50,7 +50,7 @@ border-radius: 5px;</string>
          <string notr="true">color: #ffffff;</string>
         </property>
         <property name="text">
-         <string>TRAVEL DNPHL</string>
+         <string>TRAVEL ĐNPHL</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
